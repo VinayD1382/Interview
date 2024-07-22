@@ -1,0 +1,37 @@
+class Main{
+    private int val;
+    private int res;
+    Main(){
+        this.val = val;
+        this.res = res;
+    }
+    public static void main(String[] args){
+        Main obj1 = new Main();
+        Main obj2 = new Main();
+        obj2 = obj1;
+        
+        System.out.println(obj1);
+        System.out.println(obj2);
+       System.out.println(obj1==obj2);
+        System.out.println(obj1.equals(obj2));
+    }
+    public int hashCode(){
+        return val + 500 + res;
+    }
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Main main = (Main) obj;
+        return val == main.val && res == main.res;
+    }
+    public void info(int val,int res){
+        int c = val + res;
+    }
+}
+
+output : java -cp /tmp/9zQnNLDC09/Main
+Main@1f4
+Main@1f4
+true
+true
+: obj1.equals(obj2) -> compatres the hashcode value ,obj1 == obj2 compares the references of the object.
