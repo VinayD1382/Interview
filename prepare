@@ -1,0 +1,17 @@
+Assembler : assembler is not there in java
+compiler : which convert high level language into machine level language.
+interpreter : convert bytecode to machine level language. 
+program : set of instruction given to computer.
+System.software : used to interact with hardware component.
+continue : skip current iteration and move to next iteration.
+do while loop : possible outcome then apply condition
+public class DoWhileExample {
+    public static void main(String[] args) {
+        int count = 1;
+
+        do {
+            System.out.println("Count is: " + count);
+            count++;
+        } while (count <= 5);
+    }
+}
