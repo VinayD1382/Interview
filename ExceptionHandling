@@ -1,3 +1,33 @@
+Checked Exceptions
+
+IOException
+FileNotFoundException
+SQLException
+ClassNotFoundException
+InterruptedException
+NoSuchMethodException
+InstantiationException
+MalformedURLException
+RemoteException
+CloneNotSupportedException
+
+Unchecked Exceptions
+
+NullPointerException
+ArrayIndexOutOfBoundsException
+ArithmeticException
+IllegalArgumentException
+IllegalStateException
+NumberFormatException  : string to int
+ClassCastException : converting from narrow casting , object to int : (object is also string).
+IndexOutOfBoundsException 
+UnsupportedOperationException
+SecurityException
+
+
+
+
+
 Exception : unwanted situation that occured during runtime called exception.if exception not handled then next step of the program wont get excecuted
 why need to do exception ?
 To run our code util end , we need to do exception.
@@ -67,3 +97,39 @@ output :
 1382
 String vinay cannot convert to Integer
 
+*) ArrayIndexOutOfBoundsException 
+
+class Main{
+    public static void main(String[] args){
+        int[] arr = {1,2,3,4,5};
+        System.out.println(arr[2]);
+        try{
+        System.out.println(arr[8]);
+    }catch(ArrayIndexOutOfBoundsException e ){
+        System.out.println("Index value not found");
+    }
+    System.out.println(arr[4]);
+    }
+}
+
+*)IllegalargumentException 
+if a = -1 ,(age<0) throw "illegalException " : only when if condition are applied then we can use this.
+*)IllegalThreadStatexception 
+calling two thread with same objcet.
+
+*)IndexOutOfBoundsException 
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("apple");
+        list.add("banana");
+        try{
+        System.out.print(list.get(2));
+        // Check if the index is within the bounds of the list
+    }catch(IndexOutOfBoundsException e){
+        
+    }
+    }
+}
