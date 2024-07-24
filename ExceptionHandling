@@ -1,0 +1,6 @@
+Exception : unwanted situation that occured during runtime called exception.
+try : that might have exception
+catch : that handle exception 
+finally : print statement
+throw : throws an exception
+throws : method that may contain exception.
