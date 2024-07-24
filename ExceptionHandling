@@ -46,3 +46,24 @@ VINAY
 Null value cannot connverted to uppercase
 HELLO
 
+*)NumberFormatException
+
+class Main{
+    public static void main(String[] args){
+        String str = "vinay";
+        String str1 = "1382";
+        int b = Integer.parseInt(str1);
+    
+        System.out.println(b);
+        try{
+        int a = Integer.parseInt(str);
+    }catch(NumberFormatException e){
+        System.out.println("String vinay cannot convert to Integer");
+    }
+}
+}
+
+output : 
+1382
+String vinay cannot convert to Integer
+
