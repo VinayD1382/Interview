@@ -1,0 +1,36 @@
+Static ,non static ,local ,instance varibale 
+
+
+class Main{
+    static int a = 1;
+    int b = 2;
+    public static void me1(){
+        System.out.println("Method 1");
+    }
+    public void me3(){
+        a = 3;
+        b = 4;
+    }
+    public static void me5(int z){
+       System.out.println(z);
+    }
+     public void me4(){
+       System.out.println(a);
+       System.out.println(b);
+       System.out.println(z);
+    }
+     public void me2(){
+        System.out.println("Method 2 : non static");
+    }
+    public static void main(String[] args){
+        int z = 10;
+         Main obj = new Main();
+         Main obj1 = new Main();
+         Main obj2 = new Main();
+         obj.me2();
+        me1();
+       obj2.me3();
+        obj1.me4();
+        
+}
+}
