@@ -23,7 +23,8 @@ ClassCastException : converting from narrow casting , object to int : (object is
 IndexOutOfBoundsException 
 UnsupportedOperationException
 SecurityException
-
+IllegalThreadStareException : thread.strat()
+                              thread.start() // without creating new object accessing same obj 
 
 
 
