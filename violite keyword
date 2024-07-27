@@ -1,0 +1,18 @@
+
+violite keyword used to by two or more thraeds in there run mthod if value of it is false it stop its excecution and data stored in main memory not in cache? Yes or No.cahnge can apply for 
+  all methods run as its violite keyword used all method stp excecution.
+
+  public class Example {
+    private volatile boolean flag = false;
+
+    public void setFlagTrue() {
+        flag = true;
+    }
+
+    public void waitForFlag() {
+      while (!flag) {  // if  false stp excection.
+            // Busy-wait until flag is true
+        }
+        System.out.println("Flag is true!");
+    }
+}
