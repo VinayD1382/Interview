@@ -1,0 +1,33 @@
+this keyword : representing current object .
+class Main{
+    int a;  // instance variable
+    Main(int a){ //local variable(100) called
+        a = a; //get confuse which to change , so if we use
+//this.a = a // the instance value get channged.  // we can change the value of instance variable using this kkeyword.
+    }
+    public void me(){
+        System.out.print(a);
+    }
+
+    public static void main(String[] args){
+        Main r = new Main(100);
+        r.me();
+    }
+}  : JVM will get confuse to use instance variable or local variable and change value to 100 , so its print default value 0,
+
+Example of how representing curent object : 
+class Main{
+    
+    public void me(){
+        System.out.println(this);
+    }
+    public static void main(String[] args){
+        Main obj = new Main();
+        System.out.println(obj);
+        obj.me();
+    }
+} 
+
+output ; 
+Main@379619aa
+Main@379619aa
