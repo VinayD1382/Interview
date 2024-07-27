@@ -1,0 +1,59 @@
+Finalize : before gc called in main method this finalize method remove all the resources of the objects : like object saved in other program and 
+database that will get removed from the finalize method in java , and methid in object class in finaliz().
+
+
+
+class Animal {  // Superclass
+    @Override
+    protected void finalize() throws Throwable {
+        try {
+            System.out.println("Animal finalize method called.");
+            // Cleanup code for Animal class
+        } finally {
+            super.finalize(); // Ensure superclass finalize is called
+        }
+    }
+
+    void eat() {
+        System.out.println("Animal is eating.");
+    }
+}
+
+class Dog extends Animal {  // Subclass
+    @Override
+    protected void finalize() throws Throwable {
+        try {
+            System.out.println("Dog finalize method called.");
+            // Cleanup code for Dog class
+        } finally {
+            super.finalize(); // Ensure superclass finalize is called
+        }
+    }
+
+    void bark() {
+        System.out.println("Dog is barking.");
+    }
+}
+
+public class TestInheritance {
+    public static void main(String[] args) {
+        Dog myDog = new Dog();
+        myDog.eat();  // Method inherited from Animal
+        myDog.bark(); // Method specific to Dog
+
+        // Nullify reference to the object
+        myDog = null;
+
+        // Suggest garbage collection
+        System.gc();
+
+        // Allow time for garbage collection to occur
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Main method finished.");
+    }
+}
