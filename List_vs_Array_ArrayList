@@ -10,3 +10,10 @@ ArrayList
 List<Integer> obj = new ArrayList<>();
 
 so thats why use Arraylist instead of only list.
+
+Vector: similar to ArrayList but while adding new element the size
+will get douuble ,that much of space will get used 
+10 elements add and new one more element is adding then arraylist
+creats 5 empty space for upcoming elements but Vector creates 10 more space
+so if add only 11th element the 9 space in vector will be wasted 
+so thats why ArrayList used instead of Vector.
