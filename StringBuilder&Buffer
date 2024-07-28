@@ -7,3 +7,10 @@ some methods in StringBuilder and Buffer.
 reverse()
 toString()
 append()
+
+class Main{
+    public static void main(String[] args){
+        StringBuffer std = new StringBuffer("VINAY");
+        System.out.println(std.reverse());
+    }
+}
