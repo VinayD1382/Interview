@@ -1,0 +1,9 @@
+String : Immutable ,
+str = str + st.charAt(i); : which create new value for each iteration ,its not altering the string
+StringBuffer : Alter the string are its Mutable,we can change the string ,And its is thread safe 
+StringBuilder : is similar to StringBuffer but its not Thread Safe
+some methods in StringBuilder and Buffer.
+
+reverse()
+toString()
+append()
