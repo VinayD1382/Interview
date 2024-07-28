@@ -1,0 +1,12 @@
+List : for fixed size for storing elements 
+Array : fixed size of Storing element
+ArrayList : we can resize the array
+Then we can use List Directly why need of 
+ArrayList?
+Answer : List is an Interface with empty body
+that insialization can be achieved through the help of 
+ArrayList
+
+List<Integer> obj = new ArrayList<>();
+
+so thats why use Arraylist instead of only list.
