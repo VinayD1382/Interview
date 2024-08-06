@@ -1,3 +1,13 @@
+object : having state and behaviour : state means represents the attribute or fields 
+ex : 
+class Main{
+int val ;
+public static void main(String[] args){
+Main obj = new Main();
+obj.val = 10; // representing the attrbute 
+obj.method() // call the method is the behaviour.
+
+
 class Main{
     private int val;
     private int res;
