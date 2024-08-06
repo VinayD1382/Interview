@@ -3,57 +3,32 @@ database that will get removed from the finalize method in java , and methid in 
 
 
 
-class Animal {  // Superclass
+class Main {
+    // Method to demonstrate finalize and garbage collection
     @Override
     protected void finalize() throws Throwable {
         try {
-            System.out.println("Animal finalize method called.");
-            // Cleanup code for Animal class
+            // Code to run before object is garbage collected
+            System.out.println("Finalize method called");
         } finally {
-            super.finalize(); // Ensure superclass finalize is called
+            super.finalize(); // Ensure that the superclass's finalize method is called
         }
     }
 
-    void eat() {
-        System.out.println("Animal is eating.");
-    }
-}
-
-class Dog extends Animal {  // Subclass
-    @Override
-    protected void finalize() throws Throwable {
-        try {
-            System.out.println("Dog finalize method called.");
-            // Cleanup code for Dog class
-        } finally {
-            super.finalize(); // Ensure superclass finalize is called
-        }
-    }
-
-    void bark() {
-        System.out.println("Dog is barking.");
-    }
-}
-
-public class TestInheritance {
     public static void main(String[] args) {
-        Dog myDog = new Dog();
-        myDog.eat();  // Method inherited from Animal
-        myDog.bark(); // Method specific to Dog
-
-        // Nullify reference to the object
-        myDog = null;
-
-        // Suggest garbage collection
-        System.gc();
-
-        // Allow time for garbage collection to occur
+        // Create an instance of Main
+        Main obj = new Main();
+        
+        // Request garbage collection
+        obj = null; // Make the object eligible for garbage collection
+        System.gc(); // Suggest to JVM to run garbage collection
+        
+        // Wait to observe finalize method call (optional)
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1000); // Sleep for 1 second to allow GC to run
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println(e);
         }
-
-        System.out.println("Main method finished.");
     }
 }
+
