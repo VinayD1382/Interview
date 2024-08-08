@@ -1,2 +1,0 @@
-transient : during serialization if we dont wont to share some data use transient
-public transient string name; // wont get serialized.

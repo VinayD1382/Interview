@@ -1,0 +1,56 @@
+transient : during serialization if we dont wont to share some data use transient
+public transient string name; // wont get serialized.
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+public class Serialize implements Serializable {
+	public String name;
+	public int val;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Serialize obj = new Serialize();
+		obj.name = "Vinay";
+		obj.val = 1382;
+		try {
+			FileOutputStream f1 = new FileOutputStream("C:\\Users\\LAVANYA\\Desktop\\FileFolder\\practice.txt");
+			ObjectOutputStream f2 = new ObjectOutputStream(f1);
+			f2.writeObject(obj);
+			f1.close();
+			f2.close();
+			System.out.println("Sucess byte stream");
+		}catch(IOException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+}
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.io.IOException;
+public class deserial {
+  
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Serialize obj = null;
+		try {
+			FileInputStream f1 = new FileInputStream("C:\\Users\\LAVANYA\\Desktop\\FileFolder\\practice.txt");
+			ObjectInputStream f2 = new ObjectInputStream(f1);
+			obj = (Serialize) f2.readObject();
+			f2.close();
+			System.out.println("Sucessfully written object values");
+			System.out.println(obj.name);
+			System.out.println(obj.val);
+			
+		}catch(IOException e) {
+			System.out.println(e);
+		}catch(ClassNotFoundException e) {
+			System.out.println(e);
+		}
+	}
+
+}
+
