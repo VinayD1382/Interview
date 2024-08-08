@@ -1,0 +1,11 @@
+obj can assign with only enum values 
+
+class Main{
+        enum day  {
+            MON,TUE,WED
+        }
+    public static void main(String[] args){
+        day obj = day.MON;
+        System.out.println(obj);
+    }
+}
