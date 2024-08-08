@@ -1,0 +1,23 @@
+class Main{
+    protected void finalize(){
+        try{
+        super.finalize();
+        System.out.println("Successfully deleted the object");
+    }catch(Throwable e){    //Throwable ->(exception & error) are child class ,in case of finalize method us throwable because it handle error and exception both.
+        System.out.println(e);
+    }
+    }
+    public static void main(String[] args){
+        Main obj = new Main();
+        obj = null;
+        System.gc();
+    }
+}
+
+output :
+Note: /tmp/FPkkvc3jzb/Main.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+java -cp /tmp/FPkkvc3jzb/Main
+Successfully deleted the object
+
+=== Code Execution Successful ===
