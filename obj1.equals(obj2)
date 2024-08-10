@@ -44,4 +44,4 @@ Main@1f4
 Main@1f4
 true
 true
-: obj1.equals(obj2) -> compatres the hashcode value ,obj1 == obj2 compares the references of the object.
+: obj1.equals(obj2) -> compares the content in them are equal ,obj1 == obj2 compares the references of the object or same memory address.
