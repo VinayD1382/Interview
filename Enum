@@ -1,11 +1,16 @@
-obj can assign with only enum values 
-
-class Main{
-        enum day  {
-            MON,TUE,WED
-        }
+enum status{PENDING, WAITING, CONFIRMED };
+class Order{
+    status sta;
+    Order(status sta){
+        this.sta = sta;
+    }
+   public String toString(){
+       return "Ordered " +  sta;
+   }
+    }
+    public class Main{
     public static void main(String[] args){
-        day obj = day.MON;
+        Order obj = new Order(status.PENDING);
         System.out.println(obj);
     }
-}
+    }
